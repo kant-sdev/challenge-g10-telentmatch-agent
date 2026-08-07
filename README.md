@@ -5,6 +5,49 @@ O **TalentMatch AI Agent** é o motor de inteligência artificial da plataforma 
 O agente é responsável pelo processamento de currículos em formato PDF, extração estruturada de perfis profissionais, geração de embeddings vetoriais e execução de buscas semânticas utilizando arquitetura **RAG (Retrieval-Augmented Generation)** para recomendação de candidatos.
 
 ---
+## 🚀 Prova de Conceito & Validação em Produção (Deploy)
+
+A aplicação **TalentMatch** encontra-se totalmente funcional e implantada em ambiente de nuvem, integrando a interface de usuário (Frontend) diretamente ao nosso agente inteligente de IA (FastAPI + ChromaDB + Gemini).
+
+### 🖥️ 1. Interface do Usuário (Frontend em Produção)
+
+A interface foi desenhada para oferecer uma experiência fluida, sem necessidade de logins complexos na v1, permitindo tanto a ingestão de currículos quanto a busca conversacional por talentos.
+
+| Tela | Funcionalidade |
+| :--- | :--- |
+| **Upload & Perfil** | Permite o envio do currículo em formato PDF para vetorização automática pela IA ou o preenchimento manual do perfil. |
+| **Busca Inteligente (Chat)** | Interface conversacional RAG que consulta a base vetorial global e retorna os candidatos mais aderentes com links para LinkedIn e GitHub. |
+| **Filtro de Competências** | Demonstração do RAG identificando candidatos específicos ao buscar por competências avançadas (ex: *Docker*, *SOLID*, *Padrões de Projeto*). |
+
+#### Visualização das Telas:
+
+- **Ingestão de Perfil (`/upload`):**
+  ![Upload de CV e Organização de Perfil](./docs/upload-cv.png)
+
+- **Consulta e Recomendação de Talentos:**
+  ![Chat Conversacional TalentMatch](./docs/front-chat.png)
+
+- **Refinamento de Busca por Habilidades Técnicas:**
+  ![Busca Refinada por Docker e Design Patterns](./docs/front-chat-2.png)
+
+---
+
+### ⚙️ 2. Agente de IA em Nuvem (Render Cloud)
+
+O agente backend (`telentmatch-agent`) está conteinerizado via **Docker** e hospedado no **Render**, executando a FastAPI e gerenciando as consultas vetoriais no ChromaDB.
+
+- **URL de Produção:** `https://telentmatch-agent.onrender.com`
+- **Documentação da API (Swagger UI):** `https://telentmatch-agent.onrender.com/docs`
+
+#### Evidências de Deploy & Documentação OpenAPI:
+
+- **Logs de Deploy em Produção (Render):**
+  ![Dashboard do Render com Deploys Ativos](./docs/agente-render.png)
+
+- **Endpoints e Schemas Validados (Swagger UI):**
+  ![Swagger UI do Agente FastAPI em Produção](./docs/doc-render.png)
+
+---
 
 ## 🏗️ Arquitetura
 
