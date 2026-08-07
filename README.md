@@ -5,6 +5,15 @@ O **TalentMatch AI Agent** é o motor de inteligência artificial da plataforma 
 O agente é responsável pelo processamento de currículos em formato PDF, extração estruturada de perfis profissionais, geração de embeddings vetoriais e execução de buscas semânticas utilizando arquitetura **RAG (Retrieval-Augmented Generation)** para recomendação de candidatos.
 
 ---
+## 🌐 Ambientes em Produção (Deploy)
+
+A aplicação **TalentMatch** encontra-se 100% implantada e acessível publicamente nos seguintes links de produção:
+
+* 🎨 **Frontend (Aplicação Web):** [https://talent-match-front-end--militaryicarus.replit.app/](https://talent-match-front-end--militaryicarus.replit.app/)
+* ⚙️ **Backend / Agente de IA (API):** [https://telentmatch-agent.onrender.com](https://telentmatch-agent.onrender.com)
+* 📑 **Documentação Interativa (Swagger UI):** [https://telentmatch-agent.onrender.com/docs](https://telentmatch-agent.onrender.com/docs)
+
+---
 ## 🚀 Prova de Conceito & Validação em Produção (Deploy)
 
 A aplicação **TalentMatch** encontra-se totalmente funcional e implantada em ambiente de nuvem, integrando a interface de usuário (Frontend) diretamente ao nosso agente inteligente de IA (FastAPI + ChromaDB + Gemini).
