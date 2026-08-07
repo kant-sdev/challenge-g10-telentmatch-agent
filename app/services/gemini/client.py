@@ -68,9 +68,9 @@ class GeminiClient:
 
     def generate_search_results(self, query: str, chroma_result: dict, group_id: str, limit: int = 5) -> dict:
         """Gera recomendação e lista de candidatos compatíveis com RAG (Passo 2.C)."""
-        if not chroma_result or not chroma_result.get("documents") or not chroma_result["documents"][0]:
+        if not chroma_result or not chroma_result.get("documents") or not chroma_result["documents"] or not chroma_result["documents"][0]:
             return {
-                "recommendation": f"Não foram encontrados membros no grupo '{group_id}' com as competências solicitadas.",
+                "recommendation": "Nenhum perfil foi encontrado no banco vetorial até o momento. Faça o upload de um currículo em PDF para que a IA possa analisar e recomendar candidatos!",
                 "matches": []
             }
 

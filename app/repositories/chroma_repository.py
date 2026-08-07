@@ -76,10 +76,11 @@ class ChromaRepository:
             "include": ["documents", "metadatas", "distances"]
         }
 
-        if not group_id or group_id.strip().lower() in ["global", "all", "global-pool"]:
+        group_id_clean = str(group_id or "").strip().lower()
+        if not group_id_clean or group_id_clean in ["global", "all", "global-pool", "none", "null"]:
             return self.collection.query(**query_args)
 
-        target_group = group_id.strip()
+        target_group = str(group_id).strip()
         query_args["where"] = {"group_id": {"$eq": target_group}}
 
         return self.collection.query(**query_args)
